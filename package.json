@@ -1,0 +1,19 @@
+{
+  "name": "nextjs-mono",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "turbo run dev --parallel"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/config/*",
+    "packages/shared/*"
+  ],
+  "engines": {
+    "node": "14.21.2"
+  },
+  "devDependencies": {}
+}

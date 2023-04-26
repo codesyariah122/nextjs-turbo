@@ -1,0 +1,83 @@
+{
+  "menus": {
+    "data": [
+      {
+        "id": 1,
+        "name": "Vanilla Late",
+        "img": "/images/product-coffee/vanilla_late.svg",
+        "price": 21000,
+        "rate": 5
+      },
+      {
+        "id": 2,
+        "name": "Espresso",
+        "img": "/images/product-coffee/espresso.svg",
+        "price": 12000,
+        "rate": 5.7
+      },
+      {
+        "id": 3,
+        "name": "Hazelnut Late",
+        "img": "/images/product-coffee/hazelnut_late.svg",
+        "price": 23000,
+        "rate": 5.9
+      },
+      {
+        "id": 4,
+        "name": "Sandwich",
+        "img": "/images/all-menu/sandwich.svg",
+        "price": 12000,
+        "rate": 4.8,
+        "desc": "Bread with meat and vegetables"
+      },
+      {
+        "id": 5,
+        "name": "Hot Milk",
+        "img": "/images/all-menu/hot-milk.svg",
+        "price": 12000,
+        "rate": 4,
+        "desc": "Hot milk with less sugar"
+      },
+      {
+        "id": 6,
+        "name": "Coffee Ice Cream",
+        "img": "/images/all-menu/coffee-ice-cream.svg",
+        "price": 12000,
+        "rate": 4.5,
+        "desc": "Coffee with ice cream vanilla ice cream"
+      },
+      {
+        "id": 7,
+        "name": "Cappucinno",
+        "img": "/images/all-menu/cappucinno.svg",
+        "price": 12000,
+        "rate": 4.5,
+        "desc": "Hot cappucinno with creamy latte"
+      },
+      {
+        "id": 8,
+        "name": "Moccacinno",
+        "img": "/images/all-menu/moccacinno.svg",
+        "price": 12000,
+        "rate": 4.5,
+        "desc": "Hot moccacino with brown sugar"
+      },
+      {
+        "id": 9,
+        "name": "Waffle Ice Cream",
+        "img": "/images/all-menu/waffle-ice-cream.svg",
+        "price": 12000,
+        "rate": 4.5,
+        "desc": "Waffle cruchy with soft ice cream"
+      },
+      {
+        "id": 10,
+        "name": "Cake Strawberry With Vanilla Soft Ice Cream",
+        "img": "/images/all-menu/waffle-ice-cream.svg",
+        "price": 12000,
+        "rate": 4.5,
+        "desc": "Waffle cruchy with soft ice cream"
+      }
+    ]
+  }
+}

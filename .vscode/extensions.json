@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "Nixon.env-cmd-file-syntax",
+    "esbenp.prettier-vscode",
+    "adpyke.codesnap",
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "vscode-icons-team.vscode-icons",
+    "wayou.vscode-todo-highlight",
+    "wix.vscode-import-cost",
+    "styled-components.vscode-styled-components",
+    "EditorConfig.EditorConfig"
+  ],
+  "unwantedRecommendations": ["Vue.volar"]
+}

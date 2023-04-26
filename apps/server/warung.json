@@ -1,0 +1,90 @@
+{
+  "menus": {
+    "data": [
+      {
+        "id": 1,
+        "menu_id": 1,
+        "name": "Dashboard",
+        "permalink": "/waroeng"
+      },
+      {
+        "id": 2,
+        "menu_id": 2,
+        "name": "Settings",
+        "permalink": "/waroeng/settings"
+      }
+    ]
+  },
+  "product_types": {
+    "data": [
+      {
+        "id": 1,
+        "name": "kopi",
+        "icon": "/icons/coffee-beans.png",
+        "permalink": "kopi"
+      },
+      {
+        "id": 2,
+        "name": "sabun",
+        "icon": "/icons/soap.png",
+        "permalink": "sabun"
+      },
+      {
+        "id": 3,
+        "name": "sembako",
+        "icon": "/icons/shopping-bag.png",
+        "permalink": "sembako"
+      },
+      {
+        "id": 4,
+        "name": "perabot",
+        "icon": "/icons/furniture-store.png",
+        "permalink": "perabot"
+      }
+    ]
+  },
+  "products": {
+    "data": [
+      {
+        "id": 1,
+        "name": "kopi sachet",
+        "permalink": "kopi-sachet",
+        "stock": 10,
+        "harga": 110000,
+        "date_added": "2023-03-09T16:33:39.908Z",
+        "date_updated": "2023-03-09T16:33:39.908Z",
+        "type": 1
+      },
+      {
+        "id": 2,
+        "name": "Indomie Ayam Jago",
+        "permalink": "indomie-ayam-jago",
+        "stock": 25,
+        "harga": 55000,
+        "date_added": "2023-03-09T16:33:39.908Z",
+        "date_updated": "2023-03-09T16:33:39.908Z",
+        "type": 3
+      },
+      {
+        "id": 2,
+        "name": "Kopi Kapal Selem",
+        "permalink": "kopi-kapal-selam",
+        "stock": 100,
+        "harga": 1500,
+        "date_added": "2023-03-09T16:33:39.908Z",
+        "date_updated": "2023-03-09T16:33:39.908Z",
+        "type": 1
+      },
+      {
+        "id": 3,
+        "name": "Kursi Plastik All Star",
+        "permalink": "kursi-all-star",
+        "stock": 100,
+        "harga": 75000,
+        "date_added": "2023-03-09T16:33:39.908Z",
+        "date_updated": "2023-03-09T16:33:39.908Z",
+        "type": 4
+      }
+    ]
+  }
+}

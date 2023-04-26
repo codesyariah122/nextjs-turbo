@@ -17,7 +17,7 @@ interface CoffeeCardArg {
 
 const CoffeeCard = ({ total, items }: CoffeeCardArg) => {
   const formatterNum = (val: number) => {
-    const formatVal = Intl.NumberFormat('en', {
+    const formatVal = Intl.NumberFormat('id', {
       notation: 'compact',
       maximumFractionDigits: 3,
     });
@@ -27,7 +27,7 @@ const CoffeeCard = ({ total, items }: CoffeeCardArg) => {
   return (
     <React.Fragment>
       <div className="flex justify-start space-x-12">
-        {items?.map((item: any, idx: number) => (
+        {items?.data?.map((item: any, idx: number) => (
           <div key={Math.random()}>
             <div className="w-[355px] h-[385px] bg-white border border-[#FFD28F] rounded-xl shadow dark:bg-white dark:border-[#FFD28F]">
               <div className="flex justify-center items-center">

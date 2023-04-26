@@ -9,6 +9,8 @@ interface NavbarProps {
   zIndex?: string;
   bottom?: boolean;
   bg?: string;
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>> | any;
+  setMenuId?: React.Dispatch<React.SetStateAction<number>> | any;
 }
 
 const Navbar = ({ ...props }) => {
@@ -32,10 +34,13 @@ const Navbar = ({ ...props }) => {
     allMenus && setSelected(dataMenus?.data[0]);
   }, [allMenus, dataMenus?.data]);
 
-  const handleKeyUp = (val: any) => {
-    if (val) {
-      setSearchValue(val.target.value);
-    }
+  const handleQuery = (event: any) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSelected = (id: any) => {
+    props.setIsOpen(true);
+    props.setMenuId(id);
   };
 
   const filteredMenus =
@@ -83,7 +88,7 @@ const Navbar = ({ ...props }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
               clip-rule="evenodd"
             ></path>
@@ -104,7 +109,7 @@ const Navbar = ({ ...props }) => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                           clip-rule="evenodd"
                         ></path>
@@ -113,7 +118,7 @@ const Navbar = ({ ...props }) => {
                     <Combobox.Input
                       className="w-full border-none py-2 pl-12 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 rounded-lg"
                       displayValue={(menu: any) => menu.name}
-                      onChange={(event) => setQuery(event.target.value)}
+                      onChange={(event) => handleQuery(event)}
                     />
                     <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                       <ChevronUpDownIcon
@@ -122,7 +127,7 @@ const Navbar = ({ ...props }) => {
                       />
                     </Combobox.Button>
                   </div>
-                  {props.bottom && (
+                  {props.bottom && query && (
                     <Transition
                       as={React.Fragment}
                       leave="transition ease-in duration-100"
@@ -132,7 +137,7 @@ const Navbar = ({ ...props }) => {
                     >
                       <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                         {filteredMenus?.length === 0 && query !== '' ? (
-                          <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                          <div className="relative cursor-pointer select-none py-2 px-4 text-gray-700">
                             Nothing found.
                           </div>
                         ) : (
@@ -155,13 +160,14 @@ const Navbar = ({ ...props }) => {
                               <Combobox.Option
                                 key={menu.id}
                                 className={({ active }) =>
-                                  `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                  `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
                                     active
                                       ? 'bg-[#FF902B] text-white'
                                       : 'text-gray-900'
                                   }`
                                 }
                                 value={menu}
+                                onClick={() => handleSelected(menu.id)}
                               >
                                 {({ selected, active }) => (
                                   <>

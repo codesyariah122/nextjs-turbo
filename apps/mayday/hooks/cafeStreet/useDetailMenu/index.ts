@@ -8,8 +8,8 @@ import { CORE_URL } from '@/constants/env';
 
 const baseUrl = 'http://localhost:5555';
 
-const fetchAllMenus = async () => {
-  const parsed = await fetch(`${baseUrl}/list-menus`, {
+const fetchDetailMenu = async (props: number) => {
+  const parsed = await fetch(`${baseUrl}/detail-menu/${props}`, {
     method: 'GET',
     next: {
       revalidate: 10,
@@ -20,12 +20,8 @@ const fetchAllMenus = async () => {
   return result;
 };
 
-const useGetAllMenus = () => {
-  return useQuery({
-    queryKey: ['getAllMenus'],
-    // enabled: true,
-    queryFn: async () => await fetchAllMenus(),
-  });
+const useGetDetailMenu = (props: number) => {
+  return useQuery(['getDetailMenu', props], () => fetchDetailMenu(props));
 };
 
-export { useGetAllMenus };
+export { useGetDetailMenu };

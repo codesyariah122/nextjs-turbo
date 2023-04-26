@@ -36,4 +36,22 @@ const bestRateMenus = (req, res) => {
   }
 };
 
-export { getAllMenus, bestRateMenus };
+const detailMenuById = (req, res) => {
+  try {
+    const id = req.params.id;
+    const menus = db.menus.data.map((d) => d);
+    const filteringById = menus.find((d) => d.id >= id);
+    res.json({
+      message: 'Get menu by id',
+      data: filteringById,
+    });
+  } catch (err) {
+    res
+      .json({
+        message: err.message,
+      })
+      .status(400);
+  }
+};
+
+export { getAllMenus, bestRateMenus, detailMenuById };

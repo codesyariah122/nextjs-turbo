@@ -5,6 +5,9 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
   swcMinify: true,
+  images: {
+    domains: ['http://localhost:5555'],
+  },
   experimental: {
     appDir: false,
     outputFileTracingRoot: path.join(__dirname, '../../'),

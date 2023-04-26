@@ -13,7 +13,13 @@ import {
 } from 'react-device-detect';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Navbar, HeroSection, Footer, FooterMobile } from '@/components';
+import {
+  Navbar,
+  HeroSection,
+  Footer,
+  FooterMobile,
+  PopupMenu,
+} from '@/components';
 
 import classNames from 'classnames';
 import { HeroSectionMobile } from '@/components/coffee-shop/mobile';
@@ -35,6 +41,8 @@ export const LandingLayout: React.FC<Props> = ({ children, ...props }) => {
   const [bottom, setBottom] = React.useState<boolean>(false);
   const [zIndex, setZIndex] = React.useState<string>('-z-10');
   const [bg, setBg] = React.useState<string>('bg-[#f6ebda]');
+  let [isOpen, setIsOpen] = React.useState<boolean>(false);
+  let [menuId, setMenuId] = React.useState<number>(0);
 
   const router = useRouter();
   const pathName = router.pathname;
@@ -57,7 +65,6 @@ export const LandingLayout: React.FC<Props> = ({ children, ...props }) => {
   };
 
   React.useEffect(() => {
-    console.log(isMobile);
     handleScroll;
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -79,7 +86,13 @@ export const LandingLayout: React.FC<Props> = ({ children, ...props }) => {
               : 'shadow-xl'
           }`}
         >
-          <Navbar zIndex={zIndex} bg={bg} bottom={bottom} />
+          <Navbar
+            zIndex={zIndex}
+            bg={bg}
+            bottom={bottom}
+            setIsOpen={setIsOpen}
+            setMenuId={setMenuId}
+          />
         </header>
 
         <MobileView>
@@ -89,6 +102,13 @@ export const LandingLayout: React.FC<Props> = ({ children, ...props }) => {
         <BrowserView>
           <HeroSection />
         </BrowserView>
+
+        <PopupMenu
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          menuId={menuId}
+          setMenuId={setMenuId}
+        />
 
         {children}
       </main>

@@ -6,7 +6,11 @@ import {
   getHomePage,
 } from './controller.js';
 
-import { getAllMenus, bestRateMenus } from './CafeStreetController.js';
+import {
+  getAllMenus,
+  bestRateMenus,
+  detailMenuById,
+} from './CafeStreetController.js';
 
 export const WaroengDigitalRouter = (app) => {
   app.get('/', getHomePage);
@@ -23,4 +27,5 @@ export const WaroengDigitalRouter = (app) => {
 export const CafeStreetRouter = (app) => {
   app.get('/list-menus', getAllMenus);
   app.get('/best-rate', bestRateMenus);
+  app.get('/detail-menu/:id', detailMenuById);
 };

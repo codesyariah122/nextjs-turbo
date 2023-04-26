@@ -28,6 +28,25 @@ const CoffeShop: NextPage = () => {
     }, 2500);
   }, [isLoaded]);
 
+  const scrollToPanelHero = () => {
+    const elem = isMobile
+      ? (document.querySelector('#panel-hero-section') as HTMLDivElement | null)
+      : (document.querySelector(
+          '#panel-hero-section'
+        ) as HTMLDivElement | null);
+    // scrollTo?.scrollIntoView({ behavior: "smooth" })
+    setTimeout(() => {
+      window.scrollTo({
+        top: elem?.getBoundingClientRect().top,
+        behavior: 'smooth',
+      });
+    }, 1500);
+  };
+
+  React.useEffect(() => {
+    isLoaded && scrollToPanelHero();
+  }, [isLoaded]);
+
   return (
     <LandingLayout isLoading={isLoaded} pageTitle="Cafe Street | Coffee Shop">
       {isLoaded ? (
@@ -37,7 +56,7 @@ const CoffeShop: NextPage = () => {
           <BrowserView>
             <ServicesContent />
             <AboutUsContent />
-            <AllMenu />
+            <AllMenu setIsLoaded={setIsLoaded} isLoaded={isLoaded} />
             <TestimoniContent />
             <NewsLetterSection />
           </BrowserView>

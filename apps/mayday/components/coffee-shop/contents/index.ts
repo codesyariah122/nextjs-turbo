@@ -6,3 +6,4 @@ export { default as AllMenu } from './all-menu';
 export { default as TestimoniContent } from './testimoni-content';
 export { default as NewsLetterSection } from './newsletter-section';
 export { default as PanelHeroSection } from './panel-hero-section';
+export { default as PopupMenu } from './popup-menu';

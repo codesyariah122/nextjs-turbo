@@ -2,34 +2,33 @@
 import * as React from 'react';
 import Image from 'next/image';
 import { CoffeeCard } from '@components';
-
-const sampleItems = [
-  {
-    id: 1,
-    name: 'Vanilla Late',
-    img: '/images/product-coffee/vanilla_late.svg',
-    price: 21000,
-    rate: 5,
-  },
-  {
-    id: 2,
-    name: 'Espresso',
-    img: '/images/product-coffee/espresso.svg',
-    price: 12000,
-    rate: 5.7,
-  },
-  {
-    id: 3,
-    name: 'Hazelnut Late',
-    img: '/images/product-coffee/hazelnut_late.svg',
-    price: 23000,
-    rate: 5.9,
-  },
-];
+import { useGetBestRateMenus } from '@/hooks';
 
 const PanelHeroSection = () => {
+  const {
+    data: bestRateDataMenus,
+    isLoading: isLoadingBestRates,
+    isError: isErrorBestRates,
+  } = useGetBestRateMenus();
+
+  const [bestRates, setBestRates] = React.useState<any>([]);
+
+  const bestRateMenus = React.useCallback(() => {
+    const bestRateMenus = bestRateDataMenus ?? bestRateDataMenus;
+    setBestRates(bestRateMenus);
+  }, [bestRateDataMenus]);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      bestRateMenus();
+    }, 500);
+  }, [bestRateMenus]);
+
   return (
-    <div className="grid grid-cols-1 place-content-center w-[68px] h-[558px]">
+    <div
+      className="grid grid-cols-1 place-content-center w-[68px] h-[558px]"
+      id="panel-hero-section"
+    >
       <div className="w-[1268px] h-[367px]">
         <svg
           width={1268}
@@ -63,7 +62,7 @@ const PanelHeroSection = () => {
             className="absolute"
             style={{ filter: 'drop-shadow(10px 10px 32px rgba(0,0,0,0.50))' }}
           >
-            <CoffeeCard total={3} items={sampleItems} />
+            <CoffeeCard total={3} items={bestRateDataMenus} />
           </div>
         </div>
 

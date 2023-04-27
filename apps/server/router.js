@@ -10,6 +10,7 @@ import {
   getAllMenus,
   bestRateMenus,
   detailMenuById,
+  testPromise,
 } from './CafeStreetController.js';
 
 export const WaroengDigitalRouter = (app) => {
@@ -28,4 +29,5 @@ export const CafeStreetRouter = (app) => {
   app.get('/list-menus', getAllMenus);
   app.get('/best-rate', bestRateMenus);
   app.get('/detail-menu/:id', detailMenuById);
+  app.get('/testing', testPromise);
 };

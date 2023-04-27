@@ -20,7 +20,7 @@ import {
   FooterMobile,
   PopupMenu,
 } from '@/components';
-
+import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { HeroSectionMobile } from '@/components/coffee-shop/mobile';
 
@@ -43,6 +43,8 @@ export const LandingLayout: React.FC<Props> = ({ children, ...props }) => {
   const [bg, setBg] = React.useState<string>('bg-[#f6ebda]');
   let [isOpen, setIsOpen] = React.useState<boolean>(false);
   let [menuId, setMenuId] = React.useState<number>(0);
+
+  const { t, i18n } = useTranslation();
 
   const router = useRouter();
   const pathName = router.pathname;

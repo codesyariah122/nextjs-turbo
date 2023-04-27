@@ -52,7 +52,7 @@ const CoffeShop: NextPage = () => {
       {isLoaded ? (
         <LoadingSpinner />
       ) : (
-        <>
+        <React.Fragment>
           <BrowserView>
             <ServicesContent />
             <AboutUsContent />
@@ -64,7 +64,7 @@ const CoffeShop: NextPage = () => {
             <ServicesContentMobile />
             <AboutUsContentMobile />
           </MobileView>
-        </>
+        </React.Fragment>
       )}
     </LandingLayout>
   );

@@ -8,11 +8,15 @@ module.exports = {
     './layouts/**/*.{js,ts,jsx,tsx}',
     // Or if using `src` directory:
     './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', 'Inter', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         sm: '0.8rem',
@@ -25,5 +29,16 @@ module.exports = {
       },
     },
   },
-  // plugins: [require('flowbite/plugin')],
+  plugins: [require('daisyui'), require('flowbite/plugin')],
+
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'light',
+  },
 };

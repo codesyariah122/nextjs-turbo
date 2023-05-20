@@ -315,7 +315,7 @@ const Navbar = ({ ...props }) => {
             <li>
               <a
                 href="#"
-                className={`block py-2 pl-3 pr-4 text-gray-900 bg-transparent rounded md:bg-transparent rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-[#FF902B] md:p-0 dark:text-[#1D1D1D]md:dark:hover:text-[#FF902B] dark:hover:bg-transparent dark:hover:text-white md:dark:hover:bg-transparent`}
+                className={`block py-2 pl-3 pr-4 text-gray-900 bg-transparent md:bg-transparent rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-[#FF902B] md:p-0 dark:text-[#1D1D1D]md:dark:hover:text-[#FF902B] dark:hover:bg-transparent dark:hover:text-white md:dark:hover:bg-transparent`}
               >
                 Delivery
               </a>

@@ -1,0 +1,56 @@
+/*
+ * @author Puji Ermanto<pujiermanto@ordent.co>
+ * @return FunctionalComponent
+ * remove unused properties
+ */
+
+@media (min-width: 360px) {
+  .container {
+    margin-right: 12rem;
+  }
+  /* .mySwiper {
+      width: 450px !important;
+      right: 3.5rem;
+    } */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  margin-right: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.mySwiper {
+  width: auto;
+  /* height: auto; */
+  /* left: 2.5rem; */
+}
+.swipItem {
+  text-align: center;
+  font-size: 18px;
+  margin: 1px auto;
+  padding: 5px 50px;
+  color: #fff;
+  /* Center slide text vertically */
+  border-radius: 10px;
+}
+
+.swipItem .imgBox {
+  padding: 5px;
+  border-radius: 50%;
+  margin-top: -1rem;
+}
+.swipItem .imgBox img {
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: 25px;
+}
+.detail {
+  margin: 1rem 0;
+}
